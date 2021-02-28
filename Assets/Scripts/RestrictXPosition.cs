@@ -6,6 +6,11 @@ public class RestrictXPosition : MonoBehaviour
     
     private void Update()
     {
+        ClampPosition();
+    }
+
+    private void ClampPosition()
+    {
         var transformPosition = transform.position;
 
         transformPosition.x = Mathf.Clamp(transformPosition.x, -maxX, maxX);

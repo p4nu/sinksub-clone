@@ -6,6 +6,11 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        UpdateHorizontalInput();
+    }
+
+    private void UpdateHorizontalInput()
+    {
         Horizontal = Input.GetAxis("Horizontal");
     }
 }

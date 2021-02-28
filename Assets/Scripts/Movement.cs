@@ -14,6 +14,11 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdatePosition();
+    }
+
+    private void UpdatePosition()
+    {
         transform.Translate(_playerInput.Horizontal * speed * Time.fixedDeltaTime * Vector3.right);
     }
 }
