@@ -16,8 +16,8 @@ public class RestrictXPosition : MonoBehaviour
     {
         ClampPosition();
 
-        // ReSharper disable CompareOfFloatsByEqualityOperator
-        if (transform.position.x == maxX || transform.position.x == -maxX)
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        if (Mathf.Abs(transform.position.x) == maxX)
         {
             _movement.ResetVelocity();
         }
