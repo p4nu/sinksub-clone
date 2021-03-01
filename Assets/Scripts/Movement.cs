@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float force = 100f;
 
     private PlayerInput _playerInput;
+    private Rigidbody2D _rigidbody;
 
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -19,6 +22,11 @@ public class Movement : MonoBehaviour
 
     private void UpdatePosition()
     {
-        transform.Translate(_playerInput.Horizontal * speed * Time.fixedDeltaTime * Vector3.right);
+        _rigidbody.AddForce(new Vector2(_playerInput.Horizontal * _rigidbody.mass * force * Time.fixedDeltaTime, 0));
+    }
+
+    internal void ResetVelocity()
+    {
+        _rigidbody.velocity = Vector2.zero;
     }
 }
