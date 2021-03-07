@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <members name="playerInput">
+        <PlayerInput>
+            <summary>
+                The main PlayerInput class.
+                Handles every input the game has to offer from player.
+            </summary>
+            <remarks>
+                <para>This class uses <see cref="UnityEngine.Input.GetAxis"/> to get <c>Horizontal</c> input.</para>
+            </remarks>
+        </PlayerInput>
+        <HorizontalInput>
+            <summary>
+                Variable that will store the horizontal input of controller.
+            </summary>
+        </HorizontalInput>
+        <UpdateHorizontalInput>
+            <summary>
+                Updates the horizontal input value of controller.
+            </summary>
+        </UpdateHorizontalInput>
+    </members>
+</docs>
