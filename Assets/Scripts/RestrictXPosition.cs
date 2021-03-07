@@ -1,16 +1,16 @@
 ﻿using Player;
 using UnityEngine;
 
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(PlayerMovement))]
 public class RestrictXPosition : MonoBehaviour
 {
     [SerializeField] private float maxX = 8f;
 
-    private Movement _movement;
+    private PlayerMovement _playerMovement;
 
     private void Awake()
     {
-        _movement = GetComponent<Movement>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -20,7 +20,7 @@ public class RestrictXPosition : MonoBehaviour
         // ReSharper disable once CompareOfFloatsByEqualityOperator
         if (Mathf.Abs(transform.position.x) == maxX)
         {
-            _movement.ResetVelocity();
+            _playerMovement.ResetVelocity();
         }
     }
 

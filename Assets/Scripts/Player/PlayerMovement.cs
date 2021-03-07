@@ -4,7 +4,7 @@ namespace Player
 {
     [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Movement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float force = 100f;
 
