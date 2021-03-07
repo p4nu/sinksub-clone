@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
 public class RestrictXPosition : MonoBehaviour
